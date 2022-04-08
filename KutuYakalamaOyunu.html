@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <style>
+      #obj {
+        width: 110px;
+        height: 110px;
+        position: absolute;
+        background: darkred;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid mt-3">
+      <button type="button" id="obj"></button>
+    </div>
+
+    <script>
+      var counter = 0,
+        obj,
+        xpos,
+        ypos;
+
+      obj = document.querySelector("#obj");
+      obj.onmouseover = function () {
+        counter++;
+        xpos = parseInt(Math.random() * 1000);
+        ypos = parseInt(Math.random() * 700);
+        obj.style.left = xpos + "px";
+        obj.style.top = ypos + "px";
+        obj.style.width = this.clientWidth + 10 + "px";
+        obj.style.height = this.clientHeight + 10 + "px";
+      };
+      obj.onclick = function () {
+        alert(counter + ". seferde yakaladın");
+        obj.style.width = "110px";
+        obj.style.height = "110px";
+      };
+    </script>
+  </body>
+</html>
